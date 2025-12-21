@@ -4,20 +4,104 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>LOCAL PRECISION DETAILING</title>
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%97%3C/text%3E%3C/svg%3E" />
 </head>
 
 <body>
+  <div class="bg">
+    <div class="bg__carbon"></div>
+    <div class="bg__glow bg__glow--left"></div>
+    <div class="bg__glow bg__glow--right"></div>
+    <div class="bg__sweep"></div>
+  </div>
+
   <main class="wrap">
-    <header class="brand">
-      <div class="brand__line1">LOCAL PRECISION</div>
-      <div class="brand__line2">DETAILING</div>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero__car" aria-hidden="true">
+        <!-- Simple car silhouette SVG (decor only) -->
+        <svg viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg" class="carSvg">
+          <defs>
+            <filter id="g" x="-20%" y="-50%" width="140%" height="200%">
+              <feGaussianBlur stdDeviation="6" result="b"/>
+              <feColorMatrix in="b" type="matrix"
+                values="0 0 0 0 0.20
+                        0 0 0 0 0.62
+                        0 0 0 0 1.00
+                        0 0 0 0.9 0" result="c"/>
+              <feMerge>
+                <feMergeNode in="c"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <linearGradient id="stroke" x1="0" x2="1">
+              <stop offset="0" stop-color="rgba(80,170,255,.25)"/>
+              <stop offset=".5" stop-color="rgba(120,210,255,.95)"/>
+              <stop offset="1" stop-color="rgba(80,170,255,.25)"/>
+            </linearGradient>
+          </defs>
+
+          <path filter="url(#g)"
+            d="M140 165
+               C200 120 270 95 360 90
+               L540 80
+               C610 78 660 88 710 112
+               L815 160
+               L980 165
+               C1030 165 1060 175 1085 198
+               L1105 215
+               L1105 225
+               L1035 225
+               C1015 225 1005 210 1000 195
+               C992 170 972 155 945 155
+               L890 155
+               C865 155 850 168 842 190
+               C836 210 820 225 797 225
+               L410 225
+               C388 225 372 210 366 190
+               C360 168 342 155 318 155
+               L250 155
+               C220 155 198 172 190 200
+               C184 220 168 235 145 235
+               L95 235
+               L95 210
+               C95 190 110 176 140 165
+               Z"
+            fill="rgba(8,12,22,.55)"
+            stroke="url(#stroke)"
+            stroke-width="4"
+            stroke-linejoin="round"
+          />
+
+          <!-- wheels -->
+          <g filter="url(#g)">
+            <circle cx="310" cy="205" r="54" fill="rgba(8,10,18,.9)" stroke="rgba(120,210,255,.9)" stroke-width="3"/>
+            <circle cx="310" cy="205" r="26" fill="rgba(12,16,30,.9)" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+            <circle cx="920" cy="205" r="54" fill="rgba(8,10,18,.9)" stroke="rgba(120,210,255,.9)" stroke-width="3"/>
+            <circle cx="920" cy="205" r="26" fill="rgba(12,16,30,.9)" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+          </g>
+
+          <!-- ground line -->
+          <path d="M80 245 L1120 245" stroke="rgba(120,210,255,.55)" stroke-width="3" opacity=".9"/>
+          <path d="M120 250 L1080 250" stroke="rgba(120,210,255,.20)" stroke-width="8" opacity=".8"/>
+        </svg>
+      </div>
+
+      <div class="hero__brand">
+        <div class="brand__line1">LOCAL PRECISION</div>
+        <div class="brand__line2">DETAILING</div>
+        <div class="hero__underline" aria-hidden="true"></div>
+      </div>
     </header>
 
-    <section class="packages">
-      <!-- EXTERIOR PRECISION WASH -->
-      <article class="card">
+    <!-- PACKAGES -->
+    <section class="grid">
+      <!-- LEFT -->
+      <article class="card card--left">
+        <div class="card__frame"></div>
+
         <div class="card__head">
           <div class="card__titleTop">EXTERIOR</div>
           <div class="card__titleBottom">PRECISION WASH</div>
@@ -31,11 +115,15 @@
           <li>Full Exterior Cosmetic Dressing &amp; Touch-Up</li>
         </ul>
 
+        <div class="card__photo card__photo--wash" aria-hidden="true"></div>
+
         <div class="card__time">Approx. 60-90 Minutes</div>
       </article>
 
-      <!-- INTERIOR RESET DETAIL -->
-      <article class="card">
+      <!-- MIDDLE -->
+      <article class="card card--mid">
+        <div class="card__frame"></div>
+
         <div class="card__head">
           <div class="card__titleSingle">INTERIOR RESET DETAIL</div>
         </div>
@@ -48,11 +136,15 @@
           <li>Carpet &amp; Crevice Cleaning</li>
         </ul>
 
+        <div class="card__photo card__photo--vac" aria-hidden="true"></div>
+
         <div class="card__time">Approx. 75-105 Minutes</div>
       </article>
 
-      <!-- FULL DETAIL -->
-      <article class="card">
+      <!-- RIGHT -->
+      <article class="card card--right">
+        <div class="card__frame"></div>
+
         <div class="card__head">
           <div class="card__titleTop">FULL DETAIL—</div>
           <div class="card__titleBottom">EXTERIOR + INTERIOR</div>
@@ -66,26 +158,29 @@
           <li>2-3 Hours Total</li>
         </ul>
 
+        <div class="card__photo card__photo--full" aria-hidden="true"></div>
+
         <div class="card__time">Approx. 75-105 Minutes</div>
       </article>
     </section>
 
-    <section class="footerCopy">
-      <div class="footerCopy__line">
+    <!-- BOTTOM STRIP -->
+    <section class="bottomStrip">
+      <div class="bottomStrip__line">
         Exterior Precision Wash&nbsp;&nbsp;|&nbsp;&nbsp;Interior Reset Detail&nbsp;&nbsp;|&nbsp;&nbsp;Full Detail Package
-      </div>
-
-      <div class="footerCopy__cta">BOOK BOTH &amp; SAVE!</div>
-
-      <div class="footerCopy__note">
-        Coupes &amp; Sedans&nbsp;&nbsp;•&nbsp;&nbsp;Larger Vehicles Priced on Inspection
       </div>
     </section>
 
-    <section class="qrSection">
-      <div class="qrBox">
-        <canvas id="qrCanvas" width="260" height="260" aria-label="QR code"></canvas>
-        <div class="qrLabel">SCAN TO BOOK</div>
+    <!-- CTA + NOTE + QR -->
+    <section class="lower">
+      <div class="lower__cta">BOOK BOTH &amp; SAVE!</div>
+      <div class="lower__note">Coupes &amp; Sedans&nbsp;&nbsp;•&nbsp;&nbsp;Larger Vehicles Priced on Inspection</div>
+
+      <div class="qrWrap">
+        <div class="qrBox">
+          <canvas id="qrCanvas" width="240" height="240"></canvas>
+          <div class="qrLabel">SCAN TO BOOK</div>
+        </div>
       </div>
     </section>
   </main>
