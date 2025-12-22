@@ -1,15 +1,52 @@
-.hero__brand{
-  position:relative;
-  text-align:center;
-  padding-top:140px;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Montserrat:wght@400;600;700;800;900&display=swap');
+
+:root{
+  --bg:#05070E;
+  --ink:#EAF0FF;
+  --line:rgba(255,255,255,.11);
+  --glass:rgba(10,14,28,.72);
+  --shadow: 0 22px 60px rgba(0,0,0,.55);
 }
 
-.brand__line1{
-  font-family: Orbitron, Montserrat, sans-serif;
-  font-weight:800;
-  letter-spacing:2px;
-  font-size:clamp(30px, 4.5vw, 56px);
-  text-shadow: 0 0 28px rgba(70,160,255,.20);
-  /* IMPORTANT: no forced uppercase so it displays exactly as typed */
-  text-transform:none;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: Montserrat, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  overflow-x:hidden;
 }
+
+.wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:28px 18px 56px;
+  position:relative;
+  z-index:2;
+}
+
+/* Background */
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+}
+
+.bg__carbon{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(1200px 700px at 15% 10%, rgba(70,160,255,.18), transparent 60%),
+    radial-gradient(1000px 800px at 85% 20%, rgba(120,210,255,.12), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.04), transparent 35%),
+    repeating-linear-gradient(45deg,
+      rgba(255,255,255,.045) 0px,
+      rgba(255,255,255,.045) 2px,
+      rgba(0,0,0,0) 2px,
+      rgba(0,0,0,0) 10px),
+    repeating-linear-gradient(-45deg,
+      rgba(255,255,255,.03) 0px,
+      rgba(255,255,255,.03) 2px,
+      rgba(0,0,0,0) 2px,
+      r
