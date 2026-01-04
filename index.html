@@ -1,127 +1,84 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>top gun revival auto</title>
-
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%97%3C/text%3E%3C/svg%3E" />
-</head>
-
-<body>
-  <!-- Background layers -->
-  <div class="bg" aria-hidden="true">
-    <div class="bg__carbon"></div>
-    <div class="bg__glow bg__glow--left"></div>
-    <div class="bg__glow bg__glow--right"></div>
-    <div class="bg__sweep"></div>
+<!-- SERVICES / PRICING -->
+<section id="services" class="section services">
+  <div class="section-header">
+    <p class="eyebrow">SERVICE MENU</p>
+    <h2 class="section-title">Exterior + Interior Packages</h2>
+    <p class="section-subtitle">
+      Clear pricing for coupes/sedans and larger vehicles (SUVs/trucks).
+    </p>
   </div>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <header class="hero">
-      <!-- YOUR CAR BANNER (keep your file at /assets/car-banner.png) -->
-      <div class="hero__car" aria-hidden="true">
-        <img class="heroCarImg" src="assets/car-banner.png" alt="" />
+  <div class="services-grid">
+    <!-- EXTERIOR -->
+    <article class="service-card">
+      <div class="service-top">
+        <p class="service-kicker">EXTERIOR</p>
+        <h3 class="service-title">Precision Wash</h3>
       </div>
 
-      <div class="hero__brand">
-        <div class="brand__line1">top gun revival auto</div>
-        <div class="hero__underline" aria-hidden="true"></div>
+      <div class="service-price">
+        <div class="price-row">
+          <span class="price">$70</span>
+          <span class="price-label">Coupes &amp; Sedans</span>
+        </div>
+        <div class="price-secondary">Larger Vehicles: <strong>$80</strong></div>
       </div>
-    </header>
 
-    <!-- PACKAGES -->
-    <section class="grid">
-      <!-- EXTERIOR PRECISION WASH -->
-      <article class="card card--left">
-        <div class="card__frame"></div>
+      <ul class="service-list">
+        <li>Scratch-Safe Wash</li>
+        <li>Wheel &amp; Trim Clean</li>
+        <li>Full Exterior Cosmetic Dressing &amp; Touch-Up</li>
+      </ul>
 
-        <div class="card__head">
-          <div class="card__titleTop">EXTERIOR</div>
-          <div class="card__titleBottom">PRECISION WASH</div>
-        </div>
+      <p class="service-time">Approx. 60–90 Minutes</p>
+    </article>
 
-        <div class="card__price">$60</div>
-
-        <ul class="card__list">
-          <li>Scratch-Safe Wash</li>
-          <li>Wheel &amp; Trim Clean</li>
-          <li>Full Exterior Cosmetic Dressing &amp; Touch-Up</li>
-        </ul>
-
-        <div class="card__photo card__photo--wash" aria-hidden="true"></div>
-
-        <div class="card__time">Approx. 60-90 Minutes</div>
-      </article>
-
-      <!-- INTERIOR RESET DETAIL -->
-      <article class="card card--mid">
-        <div class="card__frame"></div>
-
-        <div class="card__head">
-          <div class="card__titleSingle">INTERIOR RESET DETAIL</div>
-        </div>
-
-        <div class="card__price">$70</div>
-
-        <ul class="card__list">
-          <li>Full Interior Vacuum</li>
-          <li>Dash &amp; Leather Care</li>
-          <li>Carpet &amp; Crevice Cleaning</li>
-        </ul>
-
-        <div class="card__photo card__photo--vac" aria-hidden="true"></div>
-
-        <div class="card__time">Approx. 75-105 Minutes</div>
-      </article>
-
-      <!-- FULL DETAIL -->
-      <article class="card card--right">
-        <div class="card__frame"></div>
-
-        <div class="card__head">
-          <div class="card__titleTop">FULL DETAIL—</div>
-          <div class="card__titleBottom">EXTERIOR + INTERIOR</div>
-        </div>
-
-        <div class="card__price">$115</div>
-
-        <ul class="card__list">
-          <li>Complete Inside &amp; Out</li>
-          <li>Best Value Package</li>
-          <li>2-3 Hours Total</li>
-        </ul>
-
-        <div class="card__photo card__photo--full" aria-hidden="true"></div>
-
-        <div class="card__time">Approx. 75-105 Minutes</div>
-      </article>
-    </section>
-
-    <!-- BOTTOM STRIP -->
-    <section class="bottomStrip">
-      <div class="bottomStrip__line">
-        Exterior Precision Wash&nbsp;&nbsp;|&nbsp;&nbsp;Interior Reset Detail&nbsp;&nbsp;|&nbsp;&nbsp;Full Detail Package
+    <!-- INTERIOR -->
+    <article class="service-card">
+      <div class="service-top">
+        <p class="service-kicker">INTERIOR</p>
+        <h3 class="service-title">Reset Detail</h3>
       </div>
-    </section>
 
-    <!-- CTA + NOTE + QR (CENTERED) -->
-    <section class="lower">
-      <div class="lower__cta">BOOK BOTH &amp; SAVE!</div>
-      <div class="lower__note">Coupes &amp; Sedans • Larger Vehicles Priced on Inspection</div>
-
-      <div class="qrWrap">
-        <div class="qrBox">
-          <canvas id="qrCanvas" width="240" height="240" aria-label="QR code"></canvas>
-          <div class="qrLabel">SCAN TO BOOK</div>
+      <div class="service-price">
+        <div class="price-row">
+          <span class="price">$80</span>
+          <span class="price-label">Coupes &amp; Sedans</span>
         </div>
+        <div class="price-secondary">Larger Vehicles: <strong>$100</strong></div>
       </div>
-    </section>
-  </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
+      <ul class="service-list">
+        <li>Full Interior Vacuum</li>
+        <li>Dash &amp; Leather Care</li>
+        <li>Carpet &amp; Crevice Cleaning</li>
+      </ul>
+
+      <p class="service-time">Approx. 75–105 Minutes</p>
+    </article>
+
+    <!-- FULL PACKAGE -->
+    <article class="service-card service-card--featured">
+      <div class="service-top">
+        <p class="service-kicker">FULL PACKAGE</p>
+        <h3 class="service-title">Exterior + Interior</h3>
+      </div>
+
+      <div class="service-price">
+        <div class="price-row">
+          <span class="price">$120</span>
+          <span class="price-label">Coupes &amp; Sedans</span>
+        </div>
+        <div class="price-secondary">Larger Vehicles: <strong>$150</strong></div>
+      </div>
+
+      <ul class="service-list">
+        <li>Complete Inside &amp; Out</li>
+        <li>Best Value Package</li>
+        <li>Approx. 2–3 Hours Total</li>
+      </ul>
+
+      <p class="service-time">Approx. 2–3 Hours</p>
+    </article>
+  </div>
+</section>
