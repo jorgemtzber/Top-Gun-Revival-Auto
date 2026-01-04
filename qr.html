@@ -1,45 +1,298 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Download QR — Local Precision Detailing</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="wrap topbar__inner">
-      <a class="brand" href="index.html">
-        <span class="brand__mark">LPD</span>
-        <span class="brand__name">Local Precision Detailing</span>
-      </a>
-      <div class="topbar__cta">
-        <a class="btn btn--ghost" href="index.html">Back</a>
-        <a class="btn" href="tel:+14692078693">Call</a>
-      </div>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <main class="section">
-    <div class="wrap">
-      <h2>Download your QR Code</h2>
-      <p class="section__sub">This QR automatically points to your live website domain.</p>
+    <title>Book — Local Brother's Auto Detailing</title>
+    <meta
+      name="description"
+      content="Scan the QR code to book an appointment with Local Brother's Auto Detailing."
+    />
 
-      <div class="card" style="padding:18px;display:grid;gap:14px;max-width:520px">
-        <canvas id="qrDownloadCanvas" width="360" height="360" style="width:360px;height:360px;border-radius:18px;background:#fff;padding:10px"></canvas>
-        <div class="qrUrl" id="qrDownloadUrl">Loading…</div>
+    <link rel="stylesheet" href="styles.css" />
 
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <button class="btn" id="downloadBtn" type="button">Download PNG</button>
-          <a class="btn btn--ghost" href="index.html">Go to Website</a>
+    <!-- Self-contained styling (keeps it premium even if styles.css is minimal) -->
+    <style>
+      :root {
+        --bg: #050608;
+        --panel: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.12);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.62);
+        --muted2: rgba(255, 255, 255, 0.72);
+        --shadow: 0 0 0 1px rgba(255, 255, 255, 0.03);
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        background: radial-gradient(1200px 800px at 50% -10%, rgba(255,255,255,0.10), transparent 60%),
+                    radial-gradient(900px 700px at 10% 110%, rgba(255,255,255,0.06), transparent 55%),
+                    radial-gradient(900px 700px at 90% 110%, rgba(255,255,255,0.06), transparent 55%),
+                    var(--bg);
+        color: var(--text);
+      }
+
+      a { color: inherit; text-decoration: none; }
+      .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(14px);
+        background: rgba(5, 6, 8, 0.6);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 68px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      .brand-badge {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(255,255,255,0.06);
+        display: grid;
+        place-items: center;
+        font-size: 14px;
+        box-shadow: var(--shadow);
+      }
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(255,255,255,0.06);
+        font-size: 13px;
+        color: rgba(255,255,255,0.88);
+        box-shadow: var(--shadow);
+      }
+      .nav-cta:hover { background: rgba(255,255,255,0.09); }
+
+      .wrap {
+        padding: 42px 0 64px;
+      }
+
+      .card {
+        border-radius: 22px;
+        border: 1px solid rgba(255,255,255,0.10);
+        background: rgba(255,255,255,0.05);
+        box-shadow: var(--shadow);
+        padding: 28px;
+        overflow: hidden;
+        position: relative;
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: -120px;
+        background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.12), transparent 55%);
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 0 0 12px;
+        position: relative;
+      }
+      h1 {
+        margin: 0 0 10px;
+        font-size: clamp(28px, 3.4vw, 40px);
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        line-height: 1.05;
+        position: relative;
+      }
+      p {
+        margin: 0 0 18px;
+        color: var(--muted2);
+        font-size: 14.5px;
+        line-height: 1.55;
+        position: relative;
+      }
+
+      .qr-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        align-items: center;
+        position: relative;
+      }
+
+      .qr-box {
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .qr-img {
+        width: 100%;
+        max-width: 360px;
+        aspect-ratio: 1 / 1;
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.06);
+        display: block;
+        margin: 0 auto;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(255,255,255,0.08);
+        font-size: 13px;
+        color: rgba(255,255,255,0.9);
+        box-shadow: var(--shadow);
+      }
+      .btn:hover { background: rgba(255,255,255,0.11); }
+      .btn-primary {
+        border: 1px solid rgba(255,255,255,0.22);
+        background: rgba(255,255,255,0.14);
+      }
+      .btn-primary:hover { background: rgba(255,255,255,0.18); }
+
+      .small {
+        font-size: 12.5px;
+        color: rgba(255,255,255,0.62);
+        margin-top: 12px;
+        word-break: break-word;
+      }
+
+      footer {
+        margin-top: 26px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        color: rgba(255,255,255,0.55);
+        font-size: 13px;
+        text-align: center;
+      }
+
+      @media (max-width: 900px) {
+        .qr-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAV -->
+    <div class="nav">
+      <div class="container">
+        <div class="nav-inner">
+          <a class="brand" href="index.html">
+            <div class="brand-badge">LB</div>
+            <span>Local Brother's Auto Detailing</span>
+          </a>
+
+          <a class="nav-cta" href="index.html#services">Back to Site</a>
         </div>
-
-        <p class="hint">After download: print it, add it to flyers, or put it on your business card.</p>
       </div>
     </div>
-  </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
-  <script src="script.js"></script>
-</body>
+    <!-- CONTENT -->
+    <main class="wrap">
+      <div class="container">
+        <section class="card">
+          <p class="eyebrow">BOOK APPOINTMENT</p>
+          <h1>Scan to Book</h1>
+          <p>
+            Use your camera to scan the QR code and book your appointment instantly.
+            If you’re already on your phone, just tap the button below.
+          </p>
+
+          <div class="qr-grid">
+            <div class="qr-box">
+              <img
+                id="qrImg"
+                class="qr-img"
+                src=""
+                alt="QR code to book appointment"
+              />
+            </div>
+
+            <div class="qr-box">
+              <p style="margin-bottom: 10px;">
+                Prefer not to scan?
+              </p>
+
+              <div class="actions">
+                <a id="bookBtn" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">
+                  Tap to Book
+                </a>
+                <a class="btn" href="index.html#services">
+                  View Pricing
+                </a>
+              </div>
+
+              <div class="small">
+                Booking link:
+                <a id="bookLink" href="#" target="_blank" rel="noopener noreferrer"></a>
+              </div>
+
+              <div class="small" style="margin-top: 10px;">
+                Tip: In Calendly, ask for vehicle size (Coupe/Sedan vs SUV/Truck) and service (Exterior/Interior/Full) in the questions.
+              </div>
+            </div>
+          </div>
+
+          <footer>
+            © <span id="year"></span> Local Brother's Auto Detailing
+          </footer>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      // ✅ Your Calendly link
+      const CALENDLY_URL = "https://calendly.com/jorgemtzber02/30min";
+
+      // Build QR image from your Calendly URL (auto-encodes safely)
+      const encoded = encodeURIComponent(CALENDLY_URL);
+      const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=900x900&data=${encoded}`;
+
+      // Apply to page
+      const qrImg = document.getElementById("qrImg");
+      const bookBtn = document.getElementById("bookBtn");
+      const bookLink = document.getElementById("bookLink");
+
+      qrImg.src = qrSrc;
+      bookBtn.href = CALENDLY_URL;
+      bookLink.href = CALENDLY_URL;
+      bookLink.textContent = CALENDLY_URL;
+
+      // Footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
