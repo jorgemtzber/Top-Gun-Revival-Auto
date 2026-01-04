@@ -63,17 +63,27 @@
         font-weight: 600;
         letter-spacing: -0.01em;
       }
+
+      /* ✅ Logo badge (navbar) */
       .brand-badge {
-        width: 36px;
-        height: 36px;
-        border-radius: 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 999px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.95);
         border: 1px solid rgba(255,255,255,0.14);
-        background: rgba(255,255,255,0.06);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
         display: grid;
         place-items: center;
-        font-size: 14px;
-        box-shadow: var(--shadow);
+        flex: 0 0 auto;
       }
+      .brand-badge img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
       .nav-links {
         display: flex;
         gap: 18px;
@@ -97,9 +107,7 @@
       .nav-cta:hover { background: rgba(255,255,255,0.09); }
 
       /* Hero */
-      .hero {
-        padding: 52px 0 10px;
-      }
+      .hero { padding: 52px 0 10px; }
       .hero-card {
         position: relative;
         overflow: hidden;
@@ -122,12 +130,37 @@
         position: relative;
         padding: 54px 22px;
       }
+
       .eyebrow {
         font-size: 12px;
         letter-spacing: 0.35em;
         text-transform: uppercase;
         color: var(--muted);
       }
+
+      /* ✅ Logo beside eyebrow in hero */
+      .hero-head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .hero-logo {
+        width: 46px;
+        height: 46px;
+        border-radius: 999px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.95);
+        border: 1px solid rgba(255,255,255,0.14);
+        box-shadow: 0 12px 34px rgba(0,0,0,0.28);
+        flex: 0 0 auto;
+      }
+      .hero-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
       .hero-title {
         margin: 14px 0 10px;
         font-size: clamp(34px, 4vw, 50px);
@@ -184,10 +217,7 @@
 
       /* Sections */
       .section { padding: 64px 0; }
-      .section-header {
-        text-align: center;
-        margin-bottom: 28px;
-      }
+      .section-header { text-align: center; margin-bottom: 28px; }
       .section-title {
         font-size: 34px;
         font-weight: 650;
@@ -236,21 +266,14 @@
         letter-spacing: -0.01em;
       }
       .service-price { margin-bottom: 16px; }
-      .price-row {
-        display: flex;
-        align-items: baseline;
-        gap: 10px;
-      }
+      .price-row { display: flex; align-items: baseline; gap: 10px; }
       .price {
         font-size: 46px;
         font-weight: 700;
         letter-spacing: -0.03em;
         line-height: 1;
       }
-      .price-label {
-        font-size: 13.5px;
-        color: var(--muted);
-      }
+      .price-label { font-size: 13.5px; color: var(--muted); }
       .price-secondary {
         margin-top: 6px;
         font-size: 13.5px;
@@ -320,7 +343,9 @@
       <div class="container">
         <div class="nav-inner">
           <a class="brand" href="#top">
-            <div class="brand-badge">LB</div>
+            <div class="brand-badge">
+              <img src="assets/logo.jpg" alt="Local Brother's Auto Detailing logo" />
+            </div>
             <span>Local Brother's Auto Detailing</span>
           </a>
 
@@ -342,7 +367,13 @@
           <div class="hero-bg" aria-hidden="true"></div>
 
           <div class="hero-content">
-            <div class="eyebrow">PREMIUM DETAILING</div>
+            <div class="hero-head">
+              <div class="hero-logo">
+                <img src="assets/logo.jpg" alt="Local Brother's Auto Detailing logo" />
+              </div>
+              <div class="eyebrow">PREMIUM DETAILING</div>
+            </div>
+
             <h1 class="hero-title">Local Brother's Auto Detailing</h1>
             <p class="hero-subtitle">
               Clean, consistent, and paint-safe. Clear pricing for coupes/sedans and larger vehicles
@@ -480,8 +511,7 @@
           <div class="eyebrow">BOOKING</div>
           <h2 class="section-title">Ready to Schedule?</h2>
           <p class="section-subtitle">
-            Open the booking page (QR) below. If you want me to remove the QR section entirely from your site,
-            tell me and I’ll send the full replacement for that section too.
+            Open the booking page (QR) below.
           </p>
 
           <div style="margin-top: 18px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
