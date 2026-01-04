@@ -63,12 +63,13 @@
         letter-spacing: -0.01em;
       }
 
+      /* navbar logo uses the same file */
       .brand-badge {
         width: 40px;
         height: 40px;
         border-radius: 999px;
         overflow: hidden;
-        background: transparent;
+        background: #050608;
         border: 1px solid rgba(255,255,255,0.35);
         box-shadow: 0 10px 30px rgba(0,0,0,0.45);
         flex: 0 0 auto;
@@ -77,9 +78,9 @@
         justify-content: center;
       }
       .brand-badge img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
         display: block;
       }
 
@@ -199,13 +200,13 @@
         border-radius: 999px;
       }
 
-      /* BIG LOGO ON RIGHT – using logo.jpg */
+      /* BIG HERO LOGO – same file, on dark background */
       .hero-logo-large {
         width: 220px;
         height: 220px;
         border-radius: 999px;
-        background: transparent;
-        border: none;
+        background: #050608;
+        border: 1px solid rgba(255,255,255,0.35);
         box-shadow: 0 28px 70px rgba(0,0,0,0.55);
         flex-shrink: 0;
         display: flex;
@@ -214,9 +215,9 @@
         overflow: hidden;
       }
       .hero-logo-large img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
         display: block;
       }
 
@@ -364,7 +365,7 @@
         <div class="nav-inner">
           <a class="brand" href="#top">
             <div class="brand-badge">
-              <img src="assets/logo.jpg" alt="Local Brother's Auto Detailing logo" />
+              <img src="assets/local-brothers-logo.png" alt="Local Brother's Auto Detailing logo" />
             </div>
             <span>Local Brother's Auto Detailing</span>
           </a>
@@ -410,7 +411,7 @@
 
             <!-- Big logo on the right -->
             <div class="hero-logo-large">
-              <img src="assets/logo.jpg" alt="Local Brother's Auto Detailing logo" />
+              <img src="assets/local-brothers-logo.png" alt="Local Brother's Auto Detailing logo" />
             </div>
           </div>
         </div>
