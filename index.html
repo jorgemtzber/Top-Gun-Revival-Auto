@@ -14,17 +14,17 @@
   <meta property="og:description" content="Premium mobile auto detailing in The Woodlands, TX. Paint-safe, consistent results. Easy booking." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://localbrothersautodetailing.com/" />
-  <meta property="og:image" content="REPLACE_ME_OG_IMAGE_URL" />
+  <meta property="og:image" content="https://localbrothersautodetailing.com/assets/local-brothers-logo.png" />
 
-  <!-- Optional: Google Font (luxury + clean) -->
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Favicon (optional) -->
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" href="assets/local-brothers-logo.png" />
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- LocalBusiness + Service Schema (update fields as needed) -->
+  <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -32,7 +32,7 @@
     "name": "Local Brothers Auto Detailing",
     "url": "https://localbrothersautodetailing.com/",
     "telephone": "+1-469-207-8693",
-    "image": "REPLACE_ME_OG_IMAGE_URL",
+    "image": "https://localbrothersautodetailing.com/assets/local-brothers-logo.png",
     "description": "Premium mobile auto detailing in The Woodlands, TX. Paint-safe, consistent results. Easy booking.",
     "areaServed": [
       "The Woodlands, TX",
@@ -49,30 +49,13 @@
       "addressCountry": "US"
     },
     "sameAs": [
-      "REPLACE_ME_GOOGLE_BUSINESS_PROFILE_URL",
-      "REPLACE_ME_INSTAGRAM_URL"
-    ],
-    "makesOffer": [
-      {
-        "@type": "Offer",
-        "name": "Exterior Enhancement",
-        "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "price": "REPLACE_ME_STARTING_PRICE" }
-      },
-      {
-        "@type": "Offer",
-        "name": "Interior Restoration",
-        "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "price": "REPLACE_ME_STARTING_PRICE" }
-      },
-      {
-        "@type": "Offer",
-        "name": "Signature Full Detail",
-        "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "price": "REPLACE_ME_STARTING_PRICE" }
-      }
+      "REPLACE_WITH_GOOGLE_BUSINESS_PROFILE_URL",
+      "REPLACE_WITH_INSTAGRAM_URL"
     ]
   }
   </script>
 
-  <!-- OPTIONAL: Google Analytics 4 (replace G-XXXX) -->
+  <!-- OPTIONAL: GA4 -->
   <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_ME"></script>
   <script>
@@ -82,533 +65,6 @@
     gtag('config', 'G-REPLACE_ME');
   </script>
   -->
-
-  <style>
-    :root{
-      --bg: #0b0c0f;
-      --panel: #11131a;
-      --panel2:#0f1117;
-      --text: #eef0f6;
-      --muted:#a9afc3;
-      /* Muted “champagne” accent (lux feel without tacky bright gold) */
-      --accent:#c8b27a;
-      --accent2:#8e7a4d;
-      --line: rgba(255,255,255,.08);
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --radius: 18px;
-      --max: 1160px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 70% -10%, rgba(200,178,122,.16), transparent 60%),
-                  radial-gradient(900px 500px at 20% -20%, rgba(255,255,255,.08), transparent 60%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.45;
-    }
-
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-
-    .container{
-      width: min(100% - 40px, var(--max));
-      margin: 0 auto;
-    }
-
-    /* Top nav */
-    .nav{
-      position: sticky;
-      top:0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(11,12,15,.68);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding: 14px 0;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width: 220px;
-    }
-    .logo{
-      width:36px; height:36px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, rgba(200,178,122,.35), rgba(255,255,255,.06));
-      border: 1px solid rgba(200,178,122,.35);
-      box-shadow: 0 10px 28px rgba(0,0,0,.35);
-      display:flex; align-items:center; justify-content:center;
-      font-weight:800;
-      letter-spacing:.5px;
-      color: var(--accent);
-    }
-    .brand b{font-size:14px; letter-spacing:.2px}
-    .brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
-
-    .nav-links{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      justify-content:center;
-      flex: 1;
-    }
-    .nav-links a{
-      font-size:13px;
-      color: var(--muted);
-      padding:10px 10px;
-      border-radius: 10px;
-      transition: .18s ease;
-    }
-    .nav-links a:hover{color:var(--text); background: rgba(255,255,255,.05)}
-
-    .nav-cta{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:flex-end;
-      min-width: 260px;
-    }
-
-    /* Buttons */
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      border-radius: 14px;
-      padding: 12px 14px;
-      font-weight: 700;
-      font-size: 13px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      transition: .18s ease;
-      cursor:pointer;
-      user-select:none;
-      white-space:nowrap;
-    }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06)}
-    .btn-primary{
-      border-color: rgba(200,178,122,.35);
-      background: linear-gradient(180deg, rgba(200,178,122,.25), rgba(200,178,122,.12));
-      color: var(--text);
-    }
-    .btn-primary:hover{
-      background: linear-gradient(180deg, rgba(200,178,122,.32), rgba(200,178,122,.14));
-    }
-    .btn-ghost{
-      background: transparent;
-      border-color: rgba(255,255,255,.12);
-      color: var(--muted);
-    }
-    .btn-ghost:hover{color: var(--text); border-color: rgba(255,255,255,.18)}
-    .btn-small{padding: 10px 12px; border-radius: 12px; font-size: 12px}
-
-    /* Hero */
-    .hero{
-      padding: 54px 0 28px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 26px;
-      align-items:stretch;
-    }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .hero-left{
-      padding: 28px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero-left:before{
-      content:"";
-      position:absolute;
-      inset: -140px -140px auto auto;
-      width: 380px;
-      height: 380px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, rgba(200,178,122,.22), transparent 60%);
-      filter: blur(2px);
-      pointer-events:none;
-    }
-    .kicker{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(200,178,122,.25);
-      background: rgba(200,178,122,.08);
-      color: var(--muted);
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing:.2px;
-      margin-bottom: 14px;
-    }
-    h1{
-      margin: 0 0 10px;
-      font-size: clamp(28px, 3.2vw, 44px);
-      line-height: 1.06;
-      letter-spacing: -0.5px;
-    }
-    .sub{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 56ch;
-    }
-    .bullets{
-      display:grid;
-      gap: 10px;
-      margin: 0 0 18px;
-      padding: 0;
-      list-style: none;
-      color: var(--text);
-      font-size: 14px;
-    }
-    .bullets li{
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-      color: var(--muted);
-    }
-    .dot{
-      margin-top: 6px;
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(200,178,122,.10);
-      flex: 0 0 auto;
-    }
-    .hero-actions{
-      display:flex;
-      gap: 12px;
-      flex-wrap:wrap;
-      margin-top: 6px;
-    }
-    .trustline{
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing:.2px;
-    }
-
-    .hero-right{
-      padding: 18px;
-      display:flex;
-      flex-direction:column;
-      gap: 12px;
-    }
-    .mini{
-      padding: 16px;
-      border-radius: 16px;
-      background: rgba(0,0,0,.22);
-      border: 1px solid rgba(255,255,255,.08);
-    }
-    .mini b{display:block; font-size: 13px}
-    .mini p{margin:6px 0 0; color: var(--muted); font-size: 12px}
-
-    /* Section */
-    section{padding: 42px 0}
-    .section-title{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom: 16px;
-    }
-    .section-title h2{
-      margin:0;
-      font-size: 22px;
-      letter-spacing: -.2px;
-    }
-    .section-title p{
-      margin:0;
-      color: var(--muted);
-      font-size: 13px;
-      max-width: 70ch;
-    }
-    .divider{
-      height:1px;
-      background: var(--line);
-      margin: 26px 0 0;
-    }
-
-    /* Gallery */
-    .gallery{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .shot{
-      border-radius: 16px;
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.08);
-      background: #0a0b10;
-      position:relative;
-      min-height: 180px;
-    }
-    .shot .cap{
-      position:absolute;
-      inset: auto 10px 10px 10px;
-      padding: 10px 10px;
-      border-radius: 14px;
-      background: rgba(0,0,0,.46);
-      border: 1px solid rgba(255,255,255,.10);
-      color: rgba(255,255,255,.88);
-      font-size: 12px;
-      backdrop-filter: blur(10px);
-    }
-    .shot img{width:100%; height: 240px; object-fit:cover}
-
-    /* Packages */
-    .grid-3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .pkg{
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: linear-gradient(180deg, rgba(17,19,26,.95), rgba(11,12,15,.65));
-      box-shadow: 0 18px 50px rgba(0,0,0,.35);
-      display:flex;
-      flex-direction:column;
-      gap: 12px;
-    }
-    .pkg .top{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
-    }
-    .pkg h3{
-      margin:0;
-      font-size: 16px;
-      letter-spacing: -.2px;
-    }
-    .tag{
-      font-size: 11px;
-      color: rgba(255,255,255,.75);
-      border: 1px solid rgba(200,178,122,.25);
-      background: rgba(200,178,122,.08);
-      padding: 6px 10px;
-      border-radius: 999px;
-      white-space:nowrap;
-    }
-    .who{
-      margin:0;
-      color: var(--muted);
-      font-size: 12px;
-    }
-    .ul{
-      margin: 0;
-      padding-left: 18px;
-      color: rgba(255,255,255,.82);
-      font-size: 13px;
-    }
-    .ul li{margin: 6px 0; color: var(--muted)}
-    .price-row{
-      display:flex; align-items:baseline; justify-content:space-between; gap:12px;
-      padding-top: 8px;
-      border-top: 1px solid rgba(255,255,255,.08);
-      margin-top: 4px;
-    }
-    .price{
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -.2px;
-    }
-    .meta{
-      color: var(--muted);
-      font-size: 12px;
-    }
-    .pkg .actions{
-      display:flex;
-      gap: 10px;
-      margin-top: 6px;
-      flex-wrap:wrap;
-    }
-
-    /* Add-ons */
-    .addons{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 14px;
-      align-items:stretch;
-    }
-    .list{
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-    }
-    .addon-row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      gap: 14px;
-    }
-    .addon-row:last-child{border-bottom:none}
-    .addon-row b{font-size: 13px}
-    .addon-row span{color: var(--muted); font-size: 12px}
-
-    /* Reviews */
-    .reviews{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .review{
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-    }
-    .review .stars{
-      letter-spacing: 2px;
-      color: var(--accent);
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-    .review p{margin:0 0 12px; color: rgba(255,255,255,.86); font-size: 13px}
-    .review .by{color: var(--muted); font-size: 12px}
-
-    /* How it works */
-    .steps{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-    .step{
-      padding: 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-    }
-    .step b{display:block; font-size: 13px; margin-bottom: 6px}
-    .step p{margin:0; color: var(--muted); font-size: 12px}
-
-    /* FAQ */
-    details{
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.02);
-      border-radius: 16px;
-      padding: 14px 16px;
-      margin: 10px 0;
-    }
-    summary{
-      cursor:pointer;
-      font-weight: 700;
-      font-size: 13px;
-      color: rgba(255,255,255,.9);
-    }
-    details p{
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* Booking embed */
-    .booking-wrap{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    .embed{
-      border-radius: 18px;
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.02);
-    }
-    .calendly-inline-widget{
-      min-width: 320px;
-      height: 740px;
-    }
-
-    /* Final CTA */
-    .cta{
-      padding: 24px;
-      border-radius: 22px;
-      border: 1px solid rgba(200,178,122,.25);
-      background: radial-gradient(700px 300px at 30% 0%, rgba(200,178,122,.20), transparent 70%),
-                  rgba(255,255,255,.03);
-      box-shadow: var(--shadow);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 14px;
-      flex-wrap:wrap;
-    }
-    .cta h3{margin:0; font-size: 18px}
-    .cta p{margin:6px 0 0; color: var(--muted); font-size: 13px; max-width: 70ch}
-
-    /* Footer */
-    footer{
-      padding: 26px 0 40px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-    .foot{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 18px;
-      flex-wrap:wrap;
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
-    }
-    .foot a{color: rgba(255,255,255,.82)}
-    .foot a:hover{color: var(--text); text-decoration:underline}
-
-    /* Mobile sticky bar */
-    .mobile-bar{
-      position: fixed;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      z-index: 60;
-      display:none;
-      gap: 10px;
-      padding: 10px;
-      border-radius: 18px;
-      background: rgba(11,12,15,.72);
-      border: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 18px 50px rgba(0,0,0,.55);
-    }
-    .mobile-bar .btn{flex:1}
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr}
-      .nav-links{display:none}
-      .nav-cta{min-width:auto}
-      .grid-3{grid-template-columns: 1fr}
-      .gallery{grid-template-columns: 1fr}
-      .addons{grid-template-columns: 1fr}
-      .reviews{grid-template-columns: 1fr}
-      .steps{grid-template-columns: 1fr}
-      .calendly-inline-widget{height: 820px}
-      .mobile-bar{display:flex}
-    }
-  </style>
 </head>
 
 <body>
@@ -617,24 +73,26 @@
     <div class="container">
       <div class="nav-inner">
         <a class="brand" href="#top" aria-label="Local Brothers Auto Detailing home">
-          <div class="logo">LB</div>
-          <div>
+          <div class="brand-mark">
+            <img src="assets/local-brothers-logo.png" alt="Local Brothers logo" />
+          </div>
+          <div class="brand-text">
             <b>Local Brothers Auto Detailing</b>
-            <span>The Woodlands, TX • Mobile + Drop-Off by Appointment</span>
+            <span>The Woodlands, TX • Mobile Service • Drop-Off by Appointment</span>
           </div>
         </a>
 
         <nav class="nav-links" aria-label="Primary">
           <a href="#results">Results</a>
-          <a href="#packages">Packages</a>
+          <a href="#services">Packages</a>
           <a href="#addons">Add-ons</a>
           <a href="#reviews">Reviews</a>
           <a href="#faq">FAQ</a>
         </nav>
 
         <div class="nav-cta">
-          <a class="btn btn-ghost btn-small" href="#pricing" data-event="view_pricing">View Pricing</a>
-          <a class="btn btn-primary" href="#book" data-event="book_now_top">Book Now</a>
+          <a class="btn btn-ghost btn-small" href="#services" data-event="view_pricing_nav">View Pricing</a>
+          <a class="btn btn-primary" href="#book" data-event="book_now_nav">Book Now</a>
         </div>
       </div>
     </div>
@@ -642,14 +100,15 @@
 
   <!-- HERO -->
   <header id="top" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+
     <div class="container">
       <div class="hero-grid">
         <div class="card hero-left">
           <div class="kicker">Premium. Paint-safe. Consistent results.</div>
-          <h1>Detailing that looks expensive — because it is done right.</h1>
+          <h1>Detailing that looks expensive — because it’s done right.</h1>
           <p class="sub">
-            We deliver a clean, protected finish with careful technique and safe products.
-            Simple packages, clear expectations, and booking that doesn’t break.
+            Simple packages. Real results. Booking embedded on-page so it never breaks.
           </p>
 
           <ul class="bullets">
@@ -659,9 +118,9 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#book" data-event="book_now_hero">Book Now</a>
-            <a class="btn btn-ghost" href="#packages" data-event="view_packages_hero">View Pricing</a>
+            <a class="btn btn-ghost" href="#services" data-event="view_pricing_hero">View Pricing</a>
             <a class="btn" href="tel:+14692078693" data-event="call_hero">Call</a>
-            <a class="btn" href="sms:+14692078693?&body=Hi%20Local%20Brothers%20-%20I%20want%20a%20quick%20quote.%20Vehicle:%20____%20Package:%20____%20Preferred%20day/time:%20____" data-event="text_hero">Text</a>
+            <a class="btn" href="sms:+14692078693?&body=Hi%20Local%20Brothers%20-%20Quick%20quote.%0AVehicle:%20____%0APackage:%20____%0AAdd-ons:%20____%0APreferred%20day/time:%20____" data-event="text_hero">Text</a>
           </div>
 
           <div class="trustline">
@@ -670,17 +129,17 @@
         </div>
 
         <aside class="card hero-right" aria-label="Quick info">
+          <div class="hero-logo-large">
+            <img src="assets/local-brothers-logo.png" alt="Local Brothers Auto Detailing logo" />
+          </div>
+
           <div class="mini">
             <b>Fast scheduling</b>
             <p>Book directly on this page. We confirm details right after.</p>
           </div>
           <div class="mini">
             <b>Clear expectations</b>
-            <p>Simple packages. Optional add-ons only when needed.</p>
-          </div>
-          <div class="mini">
-            <b>Premium finish</b>
-            <p>Clean spacing, clean work — no “salesy” gimmicks.</p>
+            <p>Simple packages + optional add-ons only when needed.</p>
           </div>
         </aside>
       </div>
@@ -693,35 +152,34 @@
       <div class="section-title">
         <div>
           <h2>Recent Results</h2>
-          <p>Proof first. Replace these placeholder photos with your real before/after shots for maximum conversion.</p>
+          <p>Replace these images with your real before/after shots. (For now, they won’t break because we point to your existing banner.)</p>
         </div>
         <a class="btn btn-small" href="#book" data-event="book_now_results">Book Now</a>
       </div>
 
       <div class="gallery">
-        <!-- Replace image URLs + captions -->
         <div class="shot">
-          <img src="REPLACE_ME_IMAGE_1" alt="Before and after - paint-safe wash" loading="lazy">
+          <img src="assets/car-banner.png" alt="Paint-safe wash result" loading="lazy">
           <div class="cap">Paint-safe wash • Gloss reset</div>
         </div>
         <div class="shot">
-          <img src="REPLACE_ME_IMAGE_2" alt="Before and after - interior refresh" loading="lazy">
+          <img src="assets/car-banner.png" alt="Interior refresh result" loading="lazy">
           <div class="cap">Interior refresh • No greasy shine</div>
         </div>
         <div class="shot">
-          <img src="REPLACE_ME_IMAGE_3" alt="Before and after - dog hair removal" loading="lazy">
-          <div class="cap">Dog hair removal • Seat/vac detail</div>
+          <img src="assets/car-banner.png" alt="Dog hair removal result" loading="lazy">
+          <div class="cap">Dog hair removal • Deep vacuum</div>
         </div>
         <div class="shot">
-          <img src="REPLACE_ME_IMAGE_4" alt="Before and after - wheel cleaning" loading="lazy">
+          <img src="assets/car-banner.png" alt="Wheel cleaning result" loading="lazy">
           <div class="cap">Wheel + tire deep clean</div>
         </div>
         <div class="shot">
-          <img src="REPLACE_ME_IMAGE_5" alt="Before and after - light stain extraction" loading="lazy">
+          <img src="assets/car-banner.png" alt="Stain extraction result" loading="lazy">
           <div class="cap">Light stain extraction</div>
         </div>
         <div class="shot">
-          <img src="REPLACE_ME_IMAGE_6" alt="Before and after - protected finish" loading="lazy">
+          <img src="assets/car-banner.png" alt="Protected finish result" loading="lazy">
           <div class="cap">Protected finish • Sealant boost</div>
         </div>
       </div>
@@ -731,18 +189,17 @@
   </section>
 
   <!-- PACKAGES -->
-  <section id="packages">
+  <section id="services">
     <div class="container">
       <div class="section-title" id="pricing">
         <div>
           <h2>Packages</h2>
-          <p>Three options. Confident and simple. Each one has a <b>Book Now</b> button so booking is impossible to fail.</p>
+          <p>Three options. Simple + confident. Every package has a Book button (no friction).</p>
         </div>
         <a class="btn btn-small btn-ghost" href="#addons">See add-ons</a>
       </div>
 
       <div class="grid-3">
-        <!-- PACKAGE 1 -->
         <div class="pkg">
           <div class="top">
             <div>
@@ -754,13 +211,13 @@
           <ul class="ul">
             <li>Paint-safe hand wash + careful dry</li>
             <li>Wheels/tires cleaned + dressed (non-sling)</li>
-            <li>Windows (inside/out as needed)</li>
+            <li>Windows (as needed)</li>
             <li>Quick interior wipe (high-touch areas)</li>
-            <li>Sealant/topper (optional upgrade)</li>
+            <li>Optional protection upgrade</li>
           </ul>
           <div class="price-row">
             <div>
-              <div class="price">Starting at $REPLACE_ME</div>
+              <div class="price">Starting at $150</div>
               <div class="meta">Typical time: 1.5–2.5 hours</div>
             </div>
           </div>
@@ -770,12 +227,11 @@
           </div>
         </div>
 
-        <!-- PACKAGE 2 -->
         <div class="pkg">
           <div class="top">
             <div>
               <h3>Interior Restoration</h3>
-              <p class="who">Best for: busy interiors, spills, dust, and “reset” cleaning.</p>
+              <p class="who">Best for: busy interiors, spills, dust, and a full reset.</p>
             </div>
             <span class="tag">Interior Focus</span>
           </div>
@@ -784,39 +240,38 @@
             <li>Dash/trim cleaned + UV-safe finish</li>
             <li>Door jambs wiped</li>
             <li>Glass cleaned</li>
-            <li>Light spot treatment (add-ons for heavy stains)</li>
+            <li>Spot treatment (heavy stains add-on)</li>
           </ul>
           <div class="price-row">
             <div>
-              <div class="price">Starting at $REPLACE_ME</div>
+              <div class="price">Starting at $180</div>
               <div class="meta">Typical time: 2–3.5 hours</div>
             </div>
           </div>
           <div class="actions">
             <a class="btn btn-primary" href="#book" data-event="book_interior">Book Now</a>
-            <a class="btn" href="sms:+14692078693?&body=Hi%20Local%20Brothers%20-%20Interior%20quote.%20Vehicle:%20____%20Any%20pet%20hair/stains?%20____%20Preferred%20day/time:%20____" data-event="text_interior">Quick quote by text</a>
+            <a class="btn" href="sms:+14692078693?&body=Hi%20Local%20Brothers%20-%20Interior%20quote.%0AVehicle:%20____%0APet%20hair/stains:%20____%0APreferred%20day/time:%20____" data-event="text_interior">Quick quote by text</a>
           </div>
         </div>
 
-        <!-- PACKAGE 3 -->
         <div class="pkg">
           <div class="top">
             <div>
               <h3>Signature Full Detail</h3>
-              <p class="who">Best for: full reset inside + outside for a premium “new car” feel.</p>
+              <p class="who">Best for: full reset inside + outside for a premium finish.</p>
             </div>
             <span class="tag">Full Service</span>
           </div>
           <ul class="ul">
             <li>Exterior Enhancement (full)</li>
             <li>Interior Restoration (full)</li>
-            <li>Deep clean details (as needed)</li>
-            <li>Optional sealant/protection upgrade</li>
+            <li>Deep detail as needed</li>
+            <li>Optional protection upgrade</li>
             <li>Final touch walkthrough</li>
           </ul>
           <div class="price-row">
             <div>
-              <div class="price">Starting at $REPLACE_ME</div>
+              <div class="price">Starting at $260</div>
               <div class="meta">Typical time: 3.5–6 hours</div>
             </div>
           </div>
@@ -835,7 +290,7 @@
       <div class="section-title">
         <div>
           <h2>Add-ons</h2>
-          <p>Upsells that don’t feel pushy. Add only if your vehicle needs it.</p>
+          <p>Only when needed. No pushy upsells.</p>
         </div>
         <a class="btn btn-small btn-primary" href="#book" data-event="book_now_addons">Book Now</a>
       </div>
@@ -843,37 +298,60 @@
       <div class="addons">
         <div class="list">
           <div class="addon-row">
-            <div><b>Pet Hair Removal</b><div style="height:4px"></div><span>For heavy shedding & embedded hair</span></div>
-            <b>+$REPLACE_ME</b>
+            <div><b>Pet Hair Removal</b><div class="sp"></div><span>Embedded hair & heavy shedding</span></div>
+            <b>+$40+</b>
           </div>
           <div class="addon-row">
-            <div><b>Seat Shampoo / Extraction</b><div style="height:4px"></div><span>Cloth seats, spills, odor</span></div>
-            <b>+$REPLACE_ME</b>
+            <div><b>Seat Shampoo / Extraction</b><div class="sp"></div><span>Cloth seats, spills, odor</span></div>
+            <b>+$60+</b>
           </div>
           <div class="addon-row">
-            <div><b>Heavy Stain Treatment</b><div style="height:4px"></div><span>Deep stains (quoted after photos)</span></div>
-            <b>+$REPLACE_ME</b>
+            <div><b>Heavy Stain Treatment</b><div class="sp"></div><span>Quoted after photos/inspection</span></div>
+            <b>+$—</b>
           </div>
           <div class="addon-row">
-            <div><b>Ceramic Spray Sealant Upgrade</b><div style="height:4px"></div><span>Extra gloss + protection</span></div>
-            <b>+$REPLACE_ME</b>
+            <div><b>Spray Sealant Upgrade</b><div class="sp"></div><span>Extra gloss + protection</span></div>
+            <b>+$25+</b>
           </div>
           <div class="addon-row">
-            <div><b>Engine Bay (if offered)</b><div style="height:4px"></div><span>Light clean + dress</span></div>
-            <b>+$REPLACE_ME</b>
+            <div><b>Engine Bay (if offered)</b><div class="sp"></div><span>Light clean + dress</span></div>
+            <b>+$40+</b>
           </div>
         </div>
 
         <div class="list">
-          <b style="display:block; margin-bottom:8px;">Quick quote by text (fast)</b>
-          <p style="margin:0 0 12px; color:var(--muted); font-size:13px;">
-            Send: your vehicle + package + 2 photos. We reply with a firm quote.
+          <b class="block-title">Get a quick quote by text</b>
+          <p class="muted">
+            Send your vehicle + package + 2 photos. We reply with a firm quote.
           </p>
-          <a class="btn btn-primary" style="width:100%;" href="sms:+14692078693?&body=Hi%20Local%20Brothers%20-%20Quick%20quote.%20Vehicle:%20____%20Package:%20____%20Add-ons%20(if%20needed):%20____%20Photos:%20(attach%202)%20Preferred%20day/time:%20____" data-event="quick_quote_text">
-            Text for Quote
-          </a>
-          <div style="height:10px"></div>
-          <a class="btn" style="width:100%;" href="tel:+14692078693" data-event="call_addons">Call</a>
+
+          <form id="quoteForm" class="quote-form">
+            <label>
+              Name
+              <input type="text" id="qName" placeholder="Your name" autocomplete="name" />
+            </label>
+            <label>
+              Vehicle
+              <input type="text" id="qVehicle" placeholder="Example: 2020 Tahoe" />
+            </label>
+            <label>
+              Package
+              <select id="qPackage">
+                <option value="Exterior Enhancement">Exterior Enhancement</option>
+                <option value="Interior Restoration">Interior Restoration</option>
+                <option value="Signature Full Detail">Signature Full Detail</option>
+              </select>
+            </label>
+
+            <button type="button" class="btn btn-primary" id="sendQuoteBtn" data-event="quote_text_button">
+              Text quote request
+            </button>
+            <a class="btn" href="tel:+14692078693" data-event="call_addons">Call</a>
+
+            <p class="tiny">
+              Tip: attach 2 photos in the text after it opens.
+            </p>
+          </form>
         </div>
       </div>
     </div>
@@ -885,7 +363,7 @@
       <div class="section-title">
         <div>
           <h2>Reviews</h2>
-          <p>Use real reviews only. Add the source (Google / Nextdoor / text screenshot).</p>
+          <p>Use real reviews only (Google / Nextdoor / text screenshot). Replace these placeholders ASAP.</p>
         </div>
         <a class="btn btn-small btn-ghost" href="#book">Book</a>
       </div>
@@ -893,18 +371,18 @@
       <div class="reviews">
         <div class="review">
           <div class="stars">★★★★★</div>
-          <p>“REPLACE_ME_REVIEW_1”</p>
-          <div class="by">— REPLACE_ME_NAME • <span style="color:var(--muted)">Source: REPLACE_ME</span></div>
+          <p>“They were on time, super professional, and the car looked brand new.”</p>
+          <div class="by">— Customer • <span class="muted">Source: Text</span></div>
         </div>
         <div class="review">
           <div class="stars">★★★★★</div>
-          <p>“REPLACE_ME_REVIEW_2”</p>
-          <div class="by">— REPLACE_ME_NAME • <span style="color:var(--muted)">Source: REPLACE_ME</span></div>
+          <p>“Interior was spotless. No strong chemical smell — just clean.”</p>
+          <div class="by">— Customer • <span class="muted">Source: Text</span></div>
         </div>
         <div class="review">
           <div class="stars">★★★★★</div>
-          <p>“REPLACE_ME_REVIEW_3”</p>
-          <div class="by">— REPLACE_ME_NAME • <span style="color:var(--muted)">Source: REPLACE_ME</span></div>
+          <p>“Best detail I’ve had in The Woodlands. Worth it.”</p>
+          <div class="by">— Customer • <span class="muted">Source: Nextdoor</span></div>
         </div>
       </div>
 
@@ -918,36 +396,34 @@
       <div class="section-title">
         <div>
           <h2>How it works</h2>
-          <p>Removes anxiety. Clear steps and clear expectations.</p>
+          <p>Choose package → Pick time → We confirm → Detail → Pay.</p>
         </div>
       </div>
 
       <div class="steps">
         <div class="step">
           <b>1) Choose a package</b>
-          <p>Pick Exterior, Interior, or Signature Full Detail.</p>
+          <p>Exterior, Interior, or Full Detail.</p>
         </div>
         <div class="step">
           <b>2) Pick a time</b>
-          <p>Book directly below. No broken links.</p>
+          <p>Book directly on this page.</p>
         </div>
         <div class="step">
           <b>3) We confirm</b>
-          <p>We confirm vehicle size, add-ons, and location details.</p>
+          <p>Vehicle size, add-ons, location details.</p>
         </div>
         <div class="step">
           <b>4) Detail + pay</b>
-          <p>We complete the work, then you pay at the end.</p>
+          <p>Work completed, then you pay at the end.</p>
         </div>
       </div>
 
-      <div style="height:14px"></div>
-
-      <div class="list">
+      <div class="list" style="margin-top:14px;">
         <b>What we need from you</b>
-        <p style="margin:8px 0 0; color:var(--muted); font-size:13px;">
-          For most mobile jobs: access to the vehicle + a safe spot to work.
-          If water/power is needed, we’ll confirm before the appointment.
+        <p class="muted" style="margin-top:8px;">
+          Access to the vehicle + a safe spot to work. If water/power is needed for a specific job,
+          we’ll confirm before the appointment.
         </p>
       </div>
     </div>
@@ -959,7 +435,7 @@
       <div class="section-title">
         <div>
           <h2>FAQ</h2>
-          <p>Objection killers. Keep it simple and confident.</p>
+          <p>Quick answers that remove hesitation.</p>
         </div>
       </div>
 
@@ -970,17 +446,17 @@
 
       <details>
         <summary>Do you need water or power?</summary>
-        <p>Usually not — but if a job needs it (ex: heavy extraction), we’ll confirm in advance so there are no surprises.</p>
+        <p>Usually not — but for certain services (like heavy extraction), we’ll confirm in advance.</p>
       </details>
 
       <details>
         <summary>How long does it take?</summary>
-        <p>Most details range from 1.5 to 6 hours depending on package + vehicle condition. We’ll confirm after booking.</p>
+        <p>Most details range from 1.5 to 6 hours depending on package + condition. We confirm after booking.</p>
       </details>
 
       <details>
         <summary>What if my car is very dirty?</summary>
-        <p>No problem — we’ll let you know if extra time or a deep-clean add-on is needed after photos/inspection.</p>
+        <p>No problem — we’ll let you know if extra time/add-ons are needed after photos/inspection.</p>
       </details>
 
       <details>
@@ -989,24 +465,24 @@
       </details>
 
       <details>
-        <summary>What’s your cancellation policy?</summary>
-        <p>Please reschedule as early as possible. Same-day cancellations may require a small fee depending on time reserved.</p>
+        <summary>Cancellation policy?</summary>
+        <p>Please reschedule early. Same-day cancellations may require a small fee depending on time reserved.</p>
       </details>
     </div>
   </section>
 
-  <!-- LOCAL SEO SECTION -->
+  <!-- LOCAL SEO -->
   <section id="seo">
     <div class="container">
       <div class="section-title">
         <div>
           <h2>Auto Detailing in The Woodlands, TX</h2>
-          <p>This section helps you rank locally. Keep it real and specific.</p>
+          <p>Helps you rank locally (real + specific).</p>
         </div>
       </div>
 
       <div class="list">
-        <p style="margin:0; color:var(--muted); font-size:13px;">
+        <p class="muted" style="margin:0;">
           Local Brothers Auto Detailing provides premium mobile auto detailing in <b>The Woodlands, TX</b> and nearby areas
           including <b>Spring</b>, <b>Conroe</b>, <b>Tomball</b>, <b>Magnolia</b>, and <b>North Houston</b>.
           We focus on safe methods, consistent results, and a clean finish that looks expensive in person.
@@ -1015,22 +491,21 @@
     </div>
   </section>
 
-  <!-- BOOKING (IMPOSSIBLE TO FAIL) -->
+  <!-- BOOKING -->
   <section id="book">
     <div class="container">
       <div class="section-title">
         <div>
           <h2>Book Now</h2>
-          <p>Embedded booking so it never 403s. Replace the URL with your Calendly/Square/Acuity booking page.</p>
+          <p>Embedded booking so it can’t 403. Uses your Calendly from <code>qr.html</code>.</p>
         </div>
       </div>
 
       <div class="booking-wrap">
         <div class="embed">
-          <!-- Calendly inline widget -->
           <div
             class="calendly-inline-widget"
-            data-url="REPLACE_ME_CALENDLY_URL"
+            data-url="https://calendly.com/jorgemtzber02/30min"
             style="min-width:320px;height:740px;">
           </div>
         </div>
@@ -1038,11 +513,11 @@
         <div class="cta">
           <div>
             <h3>Premium finish. Clear pricing. Easy booking.</h3>
-            <p>Prefer to book by text? Send your vehicle + package + 2 photos and we’ll reply with a firm quote.</p>
+            <p>Prefer text? Send your vehicle + package + 2 photos and we’ll reply with a firm quote.</p>
           </div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <div class="cta-actions">
             <a class="btn btn-primary" href="#book" data-event="final_book_now">Book Now</a>
-            <a class="btn" href="sms:+14692078693?&body=Hi%20Local%20Brothers%20-%20Quick%20quote.%20Vehicle:%20____%20Package:%20____%20Photos:%20(attach%202)%20Preferred%20day/time:%20____" data-event="final_text_quote">Text for Quote</a>
+            <a class="btn" href="sms:+14692078693?&body=Hi%20Local%20Brothers%20-%20Quick%20quote.%0AVehicle:%20____%0APackage:%20____%0APhotos:%20(attach%202)%0APreferred%20day/time:%20____" data-event="final_text_quote">Text for Quote</a>
           </div>
         </div>
       </div>
@@ -1054,27 +529,26 @@
     <div class="container">
       <div class="foot">
         <div>
-          <b style="color:rgba(255,255,255,.9)">Local Brothers Auto Detailing</b>
-          <div style="height:6px"></div>
-          <div>The Woodlands, TX • Mobile Service • Drop-Off by Appointment</div>
-          <div style="height:10px"></div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <b class="foot-title">Local Brothers Auto Detailing</b>
+          <div class="foot-sub">The Woodlands, TX • Mobile Service • Drop-Off by Appointment</div>
+          <div class="foot-links">
             <a href="tel:+14692078693" data-event="call_footer">Call: (469) 207-8693</a>
-            <span style="opacity:.5">•</span>
+            <span class="sep">•</span>
             <a href="mailto:info@localbrothersdetail.com" data-event="email_footer">info@localbrothersdetail.com</a>
+            <span class="sep">•</span>
+            <a href="qr.html" data-event="qr_page">QR Booking Page</a>
           </div>
         </div>
 
         <div>
           <div><a href="#results">Results</a></div>
-          <div><a href="#packages">Packages</a></div>
+          <div><a href="#services">Packages</a></div>
           <div><a href="#addons">Add-ons</a></div>
           <div><a href="#faq">FAQ</a></div>
         </div>
 
         <div>
-          <div style="color:rgba(255,255,255,.85); font-weight:700;">Service Area</div>
-          <div style="height:6px"></div>
+          <div class="foot-col-title">Service Area</div>
           <div>The Woodlands</div>
           <div>Spring</div>
           <div>Conroe</div>
@@ -1083,37 +557,22 @@
         </div>
       </div>
 
-      <div style="height:14px"></div>
-      <div style="opacity:.75">© <span id="year"></span> Local Brothers Auto Detailing. All rights reserved.</div>
+      <div class="copyright">
+        © <span id="year"></span> Local Brothers Auto Detailing. All rights reserved.
+      </div>
     </div>
   </footer>
 
-  <!-- MOBILE STICKY BAR (call/text/book) -->
+  <!-- MOBILE STICKY BAR -->
   <div class="mobile-bar" aria-label="Quick actions">
     <a class="btn btn-primary" href="#book" data-event="mobile_book">Book</a>
     <a class="btn" href="tel:+14692078693" data-event="mobile_call">Call</a>
-    <a class="btn" href="sms:+14692078693?&body=Hi%20Local%20Brothers%20-%20Quick%20quote.%20Vehicle:%20____%20Package:%20____%20Photos:%20(attach%202)%20Preferred%20day/time:%20____" data-event="mobile_text">Text</a>
+    <a class="btn" href="sms:+14692078693?&body=Hi%20Local%20Brothers%20-%20Quick%20quote.%0AVehicle:%20____%0APackage:%20____%0APhotos:%20(attach%202)%0APreferred%20day/time:%20____" data-event="mobile_text">Text</a>
   </div>
 
-  <!-- Calendly script -->
+  <!-- Calendly -->
   <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
 
-  <script>
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Basic event tracking hook (works with GA if you add gtag; otherwise harmless)
-    document.addEventListener('click', (e) => {
-      const el = e.target.closest('[data-event]');
-      if (!el) return;
-      const eventName = el.getAttribute('data-event');
-      // If GA exists, fire event
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', eventName, { page_location: window.location.href });
-      }
-      // Debug (optional)
-      // console.log('Event:', eventName);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
