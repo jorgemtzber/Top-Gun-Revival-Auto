@@ -1,495 +1,673 @@
-      html, body { height: 100%; }
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji";
-        background: radial-gradient(1200px 800px at 50% -10%, rgba(255,255,255,0.10), transparent 60%),
-                    radial-gradient(900px 700px at 10% 110%, rgba(255,255,255,0.06), transparent 55%),
-                    radial-gradient(900px 700px at 90% 110%, rgba(255,255,255,0.06), transparent 55%),
-@@ -46,7 +47,7 @@
-        top: 0;
-        z-index: 50;
-        backdrop-filter: blur(14px);
-        background: rgba(5,6,8,0.6);
-        background: rgba(5, 6, 8, 0.6);
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-      }
-      .nav-inner {
-@@ -60,27 +61,41 @@
-        align-items: center;
-        gap: 12px;
-        font-weight: 600;
-        letter-spacing: -0.01em;
-      }
+/* ============================
+   Local Brothers Auto Detailing
+   Clean black/white premium UI
+   ============================ */
 
-      .brand-badge {
-        width: 40px;
-        height: 40px;
-        border-radius: 999px;
-        overflow: hidden;
-        background: rgba(255,255,255,0.95);
-        border: 1px solid rgba(255,255,255,0.14);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-        background: #050608;
-        border: 1px solid rgba(255,255,255,0.35);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-        flex: 0 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .brand-badge img {
-        width: 100%;
-        height: 100%;
-        width: 90%;
-        height: 90%;
-        object-fit: contain;
-        display: block;
-      }
+:root {
+  --bg: #0b0b0b;
+  --bg2: #121212;
+  --card: rgba(255, 255, 255, 0.06);
+  --card2: rgba(255, 255, 255, 0.09);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.62);
+  --muted2: rgba(255, 255, 255, 0.42);
+  --line: rgba(255, 255, 255, 0.12);
+  --white: #ffffff;
+  --black: #0b0b0b;
+  --radius: 18px;
+  --shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+}
 
-      .nav-links { display: flex; gap: 18px; font-size: 13px; color: var(--muted); }
-      .nav-links {
-        display: flex;
-        gap: 18px;
-        font-size: 13px;
-        color: var(--muted);
-      }
-      .nav-links a:hover { color: rgba(255,255,255,0.88); }
+* {
+  box-sizing: border-box;
+}
 
-      .nav-cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 14px;
-        border-radius: 999px;
-        border: 1px solid rgba(255,255,255,0.14);
-@@ -89,6 +104,7 @@
-        color: rgba(255,255,255,0.88);
-        box-shadow: var(--shadow);
-      }
-      .nav-cta:hover { background: rgba(255,255,255,0.09); }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(255, 255, 255, 0.06), transparent 60%),
+    radial-gradient(1000px 500px at 80% 0%, rgba(255, 255, 255, 0.05), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+  color: var(--text);
+}
 
-      /* HERO */
-      .hero { padding: 52px 0 10px; }
-@@ -121,20 +137,82 @@
-      }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-      .hero-main { max-width: 720px; }
-      .eyebrow { font-size: 12px; letter-spacing: 0.35em; color: var(--muted); }
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
 
-      /* BIG LOGO */
-      .eyebrow {
-        font-size: 12px;
-        letter-spacing: 0.35em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--line);
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(12px);
+}
 
-      .hero-title {
-        margin: 14px 0 10px;
-        font-size: clamp(34px, 4vw, 50px);
-        letter-spacing: -0.03em;
-        font-weight: 650;
-        line-height: 1.05;
-      }
-      .hero-subtitle {
-        margin: 0;
-        max-width: 720px;
-        color: var(--muted2);
-        font-size: 14.5px;
-        line-height: 1.55;
-      }
+.header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 0;
+}
 
-      .hero-actions {
-        margin-top: 22px;
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 16px;
-        border-radius: 999px;
-        border: 1px solid rgba(255,255,255,0.14);
-        background: rgba(255,255,255,0.08);
-        font-size: 13px;
-        color: rgba(255,255,255,0.9);
-        box-shadow: var(--shadow);
-      }
-      .btn:hover { background: rgba(255,255,255,0.11); }
-      .btn-primary {
-        border: 1px solid rgba(255,255,255,0.22);
-        background: rgba(255,255,255,0.14);
-      }
-      .btn-primary:hover { background: rgba(255,255,255,0.18); }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-      .hero-notes {
-        margin-top: 18px;
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        color: rgba(255,255,255,0.68);
-        font-size: 12.5px;
-      }
-      .pill {
-        border: 1px solid rgba(255,255,255,0.12);
-        background: rgba(255,255,255,0.05);
-        padding: 8px 12px;
-        border-radius: 999px;
-      }
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.35));
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
 
-      /* BIG LOGO ON RIGHT */
-      .hero-logo-large {
-        width: 240px;
-        height: 240px;
-        width: 220px;
-        height: 220px;
-        border-radius: 999px;
-        background: #ffffff;
-        border: 1px solid rgba(255,255,255,0.25);
-        box-shadow: 0 28px 70px rgba(0,0,0,0.45);
-        background: #050608;
-        border: 1px solid rgba(255,255,255,0.35);
-        box-shadow: 0 28px 70px rgba(0,0,0,0.55);
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-      }
-      .hero-logo-large img {
-        width: 90%;
-@@ -143,14 +221,143 @@
-        display: block;
-      }
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
 
-      /* SECTIONS */
-      .section { padding: 64px 0; }
-      .section-header {
-        text-align: center;
-        margin-bottom: 28px;
-      }
-      .section-title {
-        font-size: 34px;
-        font-weight: 650;
-        margin: 10px 0 0;
-        letter-spacing: -0.02em;
-      }
-      .section-subtitle {
-        margin: 10px auto 0;
-        max-width: 740px;
-        color: var(--muted2);
-        font-size: 14px;
-        line-height: 1.55;
-      }
+.brand-name {
+  font-weight: 900;
+  letter-spacing: -0.3px;
+}
 
-      /* SERVICES GRID */
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-      }
-      .service-card {
-        border-radius: 18px;
-        border: 1px solid var(--border);
-        background: var(--panel);
-        padding: 22px;
-        backdrop-filter: blur(10px);
-        box-shadow: var(--shadow);
-      }
-      .service-card.featured {
-        border-color: var(--border2);
-        background: var(--panel2);
-      }
-      .service-kicker {
-        margin: 0 0 10px;
-        font-size: 12px;
-        letter-spacing: 0.35em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
-      .service-title {
-        margin: 0 0 16px;
-        font-size: 22px;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-      }
-      .service-price { margin-bottom: 16px; }
-      .price-row {
-        display: flex;
-        align-items: baseline;
-        gap: 10px;
-      }
-      .price {
-        font-size: 46px;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        line-height: 1;
-      }
-      .price-label { font-size: 13.5px; color: var(--muted); }
-      .price-secondary {
-        margin-top: 6px;
-        font-size: 13.5px;
-        color: rgba(255,255,255,0.78);
-      }
-      .service-list {
-        margin: 0;
-        padding-left: 18px;
-        color: rgba(255,255,255,0.85);
-        font-size: 14px;
-        line-height: 1.65;
-      }
-      .service-time {
-        margin-top: 16px;
-        font-size: 13px;
-        color: var(--muted);
-      }
+.brand-sub {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 700;
+}
 
-      /* INFO GRID */
-      .info-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 18px;
-      }
-      .info-card {
-        border-radius: 18px;
-        border: 1px solid rgba(255,255,255,0.10);
-        background: rgba(255,255,255,0.05);
-        padding: 18px;
-        box-shadow: var(--shadow);
-      }
-      .info-card h4 {
-        margin: 0 0 6px;
-        font-size: 14px;
-        font-weight: 650;
-        letter-spacing: -0.01em;
-      }
-      .info-card p {
-        margin: 0;
-        color: var(--muted2);
-        font-size: 13.5px;
-        line-height: 1.55;
-      }
+.nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
 
-      /* FOOTER */
-      footer {
-        padding: 42px 0 60px;
-        border-top: 1px solid rgba(255,255,255,0.08);
-        color: rgba(255,255,255,0.55);
-        font-size: 13px;
-        text-align: center;
-      }
+.nav a {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 700;
+  transition: color 160ms ease;
+}
 
-      @media (max-width: 980px) {
-        .hero-content { flex-direction: column; }
-        .hero-logo-large { width: 160px; height: 160px; }
-        .services-grid, .info-grid { grid-template-columns: 1fr; }
-        .nav-links { display: none; }
-        .hero-content {
-          padding: 44px 18px;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .hero-logo-large {
-          width: 160px;
-          height: 160px;
-        }
-        .section-title { font-size: 28px; }
-      }
-    </style>
-  </head>
+.nav a:hover {
+  color: var(--white);
+}
 
-  <body>
-    <!-- NAV -->
-    <div class="nav">
-      <div class="container">
-        <div class="nav-inner">
-@@ -172,26 +379,35 @@
-      </div>
-    </div>
+.header-cta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 
-    <!-- HERO -->
-    <header id="top" class="hero">
-      <div class="container">
-        <div class="hero-card">
-          <div class="hero-bg"></div>
-          <div class="hero-bg" aria-hidden="true"></div>
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
 
-          <div class="hero-content">
-            <div class="hero-main">
-              <div class="eyebrow">PREMIUM DETAILING</div>
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 18px;
+  margin: 4px auto;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+}
 
-              <h1 class="hero-title">Local Brother's Auto Detailing</h1>
-              <p class="hero-subtitle">
-                Clean, consistent, and paint-safe. Clear pricing for coupes/sedans and larger vehicles (SUVs/trucks) with premium results.
-                Clean, consistent, and paint-safe. Clear pricing for coupes/sedans and larger vehicles
-                (SUVs/trucks) with premium results.
-              </p>
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+  font-size: 14px;
+  border: 1px solid var(--line);
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
 
-              <div class="hero-actions">
-                <a class="btn btn-primary" href="#services">View Pricing</a>
-                <a class="btn" href="qr.html">Open Booking / QR</a>
-              </div>
+.btn:active {
+  transform: translateY(1px);
+}
 
-              <div class="hero-notes">
-                <span class="pill">Scratch-safe wash methods</span>
-                <span class="pill">Interior reset + protection</span>
-                <span class="pill">Fast, reliable service</span>
-              </div>
-            </div>
+.btn-solid {
+  background: var(--white);
+  color: var(--black);
+  border-color: transparent;
+}
 
-            <!-- BIG LOGO -->
-            <!-- Big logo on the right -->
-            <div class="hero-logo-large">
-              <img src="assets/local-brothers-logo.png" alt="Local Brother's Auto Detailing logo" />
-            </div>
-@@ -200,7 +416,145 @@ <h1 class="hero-title">Local Brother's Auto Detailing</h1>
-      </div>
-    </header>
+.btn-solid:hover {
+  background: rgba(255, 255, 255, 0.92);
+}
 
-    <!-- rest of site unchanged -->
-    <!-- SERVICES -->
-    <section id="services" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">SERVICE MENU</div>
-          <h2 class="section-title">Exterior + Interior Packages</h2>
-          <p class="section-subtitle">
-            Pricing is based on vehicle size. “Larger vehicles” includes SUVs, trucks, and 3-row vehicles.
-          </p>
-        </div>
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+}
 
-        <div class="services-grid">
-          <!-- EXTERIOR -->
-          <article class="service-card">
-            <p class="service-kicker">EXTERIOR</p>
-            <h3 class="service-title">Precision Wash</h3>
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
 
-            <div class="service-price">
-              <div class="price-row">
-                <div class="price">$70</div>
-                <div class="price-label">Coupes &amp; Sedans</div>
-              </div>
-              <div class="price-secondary">Larger Vehicles: <strong>$80</strong></div>
-            </div>
+.btn-full {
+  width: 100%;
+}
 
-            <ul class="service-list">
-              <li>Scratch-safe wash</li>
-              <li>Wheel &amp; trim clean</li>
-              <li>Exterior cosmetic dressing &amp; touch-up</li>
-            </ul>
+/* Hero */
+.hero {
+  position: relative;
+  padding: 70px 0 30px;
+  overflow: hidden;
+}
 
-            <p class="service-time">Approx. 60–90 Minutes</p>
-          </article>
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 22px;
+  align-items: start;
+}
 
-          <!-- INTERIOR -->
-          <article class="service-card">
-            <p class="service-kicker">INTERIOR</p>
-            <h3 class="service-title">Reset Detail</h3>
+.kicker {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 12px;
+  margin: 0 0 14px;
+}
 
-            <div class="service-price">
-              <div class="price-row">
-                <div class="price">$80</div>
-                <div class="price-label">Coupes &amp; Sedans</div>
-              </div>
-              <div class="price-secondary">Larger Vehicles: <strong>$100</strong></div>
-            </div>
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(34px, 4vw, 56px);
+  letter-spacing: -1px;
+  line-height: 1.05;
+}
 
-            <ul class="service-list">
-              <li>Full interior vacuum</li>
-              <li>Full interior clean &amp; dressing</li>
-              <li>Steam Clean</li>
-            </ul>
+.subhead {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 700;
+}
 
-            <p class="service-time">Approx. 75–105 Minutes</p>
-          </article>
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
 
-          <!-- FULL PACKAGE -->
-          <article class="service-card featured">
-            <p class="service-kicker">FULL PACKAGE</p>
-            <h3 class="service-title">Exterior + Interior</h3>
+.hero-badges {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
 
-            <div class="service-price">
-              <div class="price-row">
-                <div class="price">$120</div>
-                <div class="price-label">Coupes &amp; Sedans</div>
-              </div>
-              <div class="price-secondary">Larger Vehicles: <strong>$150</strong></div>
-            </div>
+.badge {
+  padding: 14px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+}
 
-            <ul class="service-list">
-              <li>Complete inside &amp; out</li>
-              <li>Best value package</li>
-              <li>Approx. 2–3 hours total</li>
-            </ul>
+.badge-title {
+  display: block;
+  font-weight: 900;
+  font-size: 13px;
+}
 
-            <p class="service-time">Approx. 2–3 Hours</p>
-          </article>
-        </div>
-      </div>
-    </section>
+.badge-sub {
+  display: block;
+  font-weight: 700;
+  color: var(--muted2);
+  font-size: 12px;
+  margin-top: 2px;
+}
 
-    <!-- WHAT YOU GET -->
-    <section id="what-you-get" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">QUALITY STANDARD</div>
-          <h2 class="section-title">What You Get</h2>
-          <p class="section-subtitle">
-            A consistent, professional finish — designed to look premium in photos and in person.
-          </p>
-        </div>
+.hero-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
 
-        <div class="info-grid">
-          <div class="info-card">
-            <h4>Paint-Safe Process</h4>
-            <p>Careful contact methods and proper drying to minimize the risk of scratches.</p>
-          </div>
-          <div class="info-card">
-            <h4>Interior Reset</h4>
-            <p>Vacuum + wipe-down + attention to the high-touch areas that matter most.</p>
-          </div>
-          <div class="info-card">
-            <h4>Premium Finish</h4>
-            <p>Clean, glossy, and presentable — ready for daily driving or an event.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+.hero-card-inner {
+  padding: 18px;
+}
 
-    <!-- BOOKING -->
-    <section id="booking" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">BOOKING</div>
-          <h2 class="section-title">Ready to Schedule?</h2>
-          <p class="section-subtitle">
-            Open the booking page (QR) below.
-          </p>
+.hero-card h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 900;
+}
 
-          <div style="margin-top: 18px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-            <a class="btn btn-primary" href="qr.html">Open Booking / QR</a>
-            <a class="btn" href="#services">Back to Pricing</a>
-          </div>
-        </div>
-      </div>
-    </section>
+.hero-card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-weight: 700;
+}
 
-    <footer>
-      <div class="container">
-        © <span id="year"></span> Local Brother's Auto Detailing. All rights reserved.
-      </div>
-    </footer>
+.hero-list {
+  margin: 0 0 14px;
+  padding-left: 18px;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 13px;
+}
 
-    <script src="script.js"></script>
-    <script>
-      (function () {
-        var el = document.getElementById("year");
-        if (el) el.textContent = new Date().getFullYear();
-      })();
-    </script>
-  </body>
+.micro {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--muted2);
+  font-weight: 700;
+}
+
+.micro a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: -200px -200px auto -200px;
+  height: 520px;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.08), transparent 70%);
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+/* Sections */
+.section {
+  padding: 70px 0;
+}
+
+.section-alt {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.section-head {
+  margin-bottom: 18px;
+}
+
+.section-head.center {
+  text-align: center;
+}
+
+.section-head h2 {
+  margin: 0 0 6px;
+  font-size: 30px;
+  font-weight: 950;
+  letter-spacing: -0.5px;
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.card {
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.card-sub {
+  margin: 0 0 12px;
+  color: var(--muted2);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-weight: 750;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.note {
+  margin-top: 16px;
+  padding: 14px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-weight: 750;
+}
+
+/* Pricing */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.pricing-card {
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.pricing-card h3 {
+  margin: 0 0 12px;
+  font-weight: 950;
+  font-size: 18px;
+}
+
+.pricing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.14);
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.pricing-row:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.price {
+  color: var(--white);
+  font-weight: 950;
+}
+
+/* Gallery */
+.gallery {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ph {
+  height: 160px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  display: grid;
+  place-items: center;
+  color: var(--muted2);
+  font-weight: 900;
+}
+
+/* Quote form (Book / Get a Quote) */
+.quote-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.quote-card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 34px 26px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.quote-form {
+  display: grid;
+  gap: 10px;
+}
+
+.quote-label {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.quote-input,
+.quote-textarea {
+  width: 100%;
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  padding: 14px 14px;
+  background: #efefef;
+  color: #111;
+  font: inherit;
+}
+
+.quote-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.quote-input:focus,
+.quote-textarea:focus {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.quote-button {
+  margin-top: 12px;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.quote-button:active {
+  transform: translateY(1px);
+}
+
+.quote-note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.55);
+  font-weight: 800;
+}
+
+.quote-status {
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: center;
+  font-weight: 900;
+  min-height: 18px;
+}
+
+.quote-status.ok {
+  color: #0a7a2f;
+}
+
+.quote-status.err {
+  color: #b00020;
+}
+
+.quote-alt {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 12px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.quote-alt a {
+  color: #0b0b0b;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* FAQ */
+.faq {
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+details {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 14px 14px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 950;
+}
+
+details p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-weight: 750;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 26px 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.footer-inner {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  font-weight: 950;
+  letter-spacing: -0.2px;
+}
+
+.footer-sub {
+  margin-top: 6px;
+  color: var(--muted);
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 850;
+  color: var(--muted);
+}
+
+.footer-right a:hover {
+  color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 920px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-badges {
+    grid-template-columns: 1fr;
+  }
+
+  .cards,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .header-inner {
+    grid-template-columns: 1fr auto auto;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav {
+    display: none;
+    grid-column: 1 / -1;
+    padding: 10px 0 6px;
+    gap: 14px;
+    border-top: 1px solid var(--line);
+    margin-top: 10px;
+  }
+
+  .nav.open {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .header-cta {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 520px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-card {
+    padding: 28px 18px;
+  }
+}
